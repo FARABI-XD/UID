@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/save_uid", methods=["GET"])
 def save_uid():
-    uid = request.form.get("uid")
+    uid = request.args.get("uid")
 
     if not uid:
         return jsonify({"error": "UID required"}), 400
