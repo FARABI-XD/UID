@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route("/save_uid", methods=["POST"])
+@app.route("/save_uid", methods=["GET"])
 def save_uid():
     uid = request.form.get("uid")
 
