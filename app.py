@@ -16,6 +16,10 @@ def save_uid():
         "success": True,
         "uid": uid
     })
-
+import os
+@app.route("/")
+def home():
+    return "Server is running!"
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
